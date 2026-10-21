@@ -8,7 +8,8 @@
     "category": "Cooperative learning",
     "summary": "Focus on under-explored state dimensions and sustain collective influence to improve coordinated exploration under sparse rewards.",
     "paper": "FIM/assets/FIM_paper.pdf",
-    "source": "https://mllab.unist.ac.kr/publications/"
+    "source": "https://mllab.unist.ac.kr/publications/",
+    "code": "https://github.com/yisak9101/FIM"
   },
   {
     "slug": "BGP",

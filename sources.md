@@ -2,7 +2,7 @@
 
 Verified 2026-10-21.
 
-- Lab name, PI and affiliation: https://mllab.unist.ac.kr/
+- Lab name, PI, affiliation, and the four homepage research directions: https://mllab.unist.ac.kr/
 - Publication titles, authors, venues: https://mllab.unist.ac.kr/publications/
 - FIM text, figures and results: author-supplied camera-ready manuscript.
 - BGP: https://mllab.unist.ac.kr/publications/
@@ -15,3 +15,5 @@ Verified 2026-10-21.
 - FoX: https://arxiv.org/abs/2308.11272
 
 MARBO is listed as EMNLP 2026 by both the lab and its arXiv record; no new bibliographic changes were made to the manuscript in this URL revision.
+
+- FIM implementation repository supplied by the authors and verified as public: https://github.com/yisak9101/FIM

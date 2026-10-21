@@ -9,7 +9,7 @@ The site uses static HTML, CSS and JavaScript. No package installation or build 
 
 The homepage links to FIM and eight other publication overview pages. Update the project cards and `data/papers.json` together when adding research, and include new routes in `sitemap.xml`.
 
-The FIM paper includes the full manuscript and appendix. Its hosted PDF is optimized for web delivery, retaining all 39 pages, text, links and page geometry. The experimental implementation is awaiting release; update the project page only after its repository is available.
+The FIM paper includes the full manuscript and appendix. Its hosted PDF is optimized for web delivery, retaining all 39 pages, text, links and page geometry. The project page links to the experimental implementation at https://github.com/yisak9101/FIM.
 
 After changing `main`, check the `pages build and deployment` workflow, then verify the homepage, `/FIM/`, the paper download and publication links.
 
