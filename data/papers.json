@@ -1,0 +1,108 @@
+[
+  {
+    "slug": "FIM",
+    "name": "FIM",
+    "title": "Focusing Influence Mechanism for Multi-Agent Reinforcement Learning",
+    "authors": "Yisak Park · Sunwoo Lee · Seungyul Han",
+    "venue": "NeurIPS 2026",
+    "category": "Cooperative learning",
+    "summary": "Focus on under-explored state dimensions and sustain collective influence to improve coordinated exploration under sparse rewards.",
+    "paper": "FIM/assets/FIM_paper.pdf",
+    "source": "https://mllab.unist.ac.kr/publications/"
+  },
+  {
+    "slug": "BGP",
+    "name": "BGP",
+    "title": "Escaping Path Mirages in Offline Goal-Conditioned Reinforcement Learning",
+    "authors": "Junhyeon Bae · Jaebak Hwang · Gwanwoo Choi · Minung Kim · Seungyul Han",
+    "venue": "NeurIPS 2026",
+    "category": "Planning & control",
+    "summary": "Research on offline goal-conditioned reinforcement learning and the challenge of reaching long-horizon goals.",
+    "paper": "https://mllab.unist.ac.kr/publications/",
+    "source": "https://mllab.unist.ac.kr/publications/"
+  },
+  {
+    "slug": "MARBO",
+    "name": "MARBO",
+    "title": "MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games",
+    "authors": "Yechan Hwang · Sangjun Bae · Jeongmo Kim · Sangwoo Bang · Seungyul Han",
+    "venue": "EMNLP 2026",
+    "category": "Language & agents",
+    "summary": "Ground strategic actions and in-game speech in reliable beliefs about hidden roles and team relationships.",
+    "detail": "MARBO uses relational beliefs to guide preference optimization in social deduction games. Feedback depends on both the reliability of those beliefs and the strategic outcomes of the resulting behavior.",
+    "paper": "https://arxiv.org/abs/2609.06563",
+    "source": "https://arxiv.org/abs/2609.06563"
+  },
+  {
+    "slug": "IBAL",
+    "name": "IBAL",
+    "title": "Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning",
+    "authors": "Sunwoo Lee · Mingu Kang · Yonghyeon Jo · Seungyul Han",
+    "venue": "ICML 2026",
+    "category": "Robust cooperation",
+    "summary": "Train teams to maintain cooperation when adversarial perturbations disrupt interactions between agents.",
+    "detail": "IBAL constructs observation and action perturbations that interfere with coordination. Adversarial training then teaches policies to remain effective under these interaction-focused disruptions, including evaluations with missing agents.",
+    "paper": "https://arxiv.org/abs/2605.18024",
+    "source": "https://arxiv.org/abs/2605.18024"
+  },
+  {
+    "slug": "LMAC",
+    "name": "LMAC",
+    "title": "LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning",
+    "authors": "Sangjun Bae · Yisak Park · Sanghyeon Lee · Seungyul Han",
+    "venue": "ICML 2026",
+    "category": "Language & agents",
+    "summary": "Use an LLM to design communication protocols that help partially observable agents reconstruct the shared state.",
+    "detail": "LMAC refines its communication protocol using a state-awareness criterion. The goal is to improve state reconstruction across agents while reducing differences in what each agent knows.",
+    "paper": "https://arxiv.org/abs/2605.18077",
+    "source": "https://arxiv.org/abs/2605.18077"
+  },
+  {
+    "slug": "S2Q",
+    "name": "S2Q",
+    "title": "Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent Reinforcement Learning",
+    "authors": "Yonghyeon Jo · Sunwoo Lee · Seungyul Han",
+    "venue": "ICLR 2026",
+    "category": "Cooperative learning",
+    "summary": "Keep alternative high-value actions available as the best joint strategy changes during training.",
+    "detail": "Successive Sub-value Q-learning learns multiple sub-value functions rather than relying on a single optimal action. A softmax behavior policy uses these alternatives to sustain exploration and adapt to changing value estimates.",
+    "paper": "https://arxiv.org/abs/2602.17062",
+    "source": "https://arxiv.org/abs/2602.17062"
+  },
+  {
+    "slug": "SSE",
+    "name": "SSE",
+    "title": "Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning",
+    "authors": "Jaebak Hwang · Sanghyeon Lee · Jeongmo Kim · Seungyul Han",
+    "venue": "ICLR 2026",
+    "category": "Planning & control",
+    "summary": "Make long-horizon plans more reliable by separating feasible subgoals from unreachable ones.",
+    "detail": "SSE combines graph-based hierarchical planning with Frontier Experience Replay. Failure and partial-success transitions help identify unreliable subgoals, while a separate exploration policy and path refinement improve coverage and planning.",
+    "paper": "https://arxiv.org/abs/2506.21039",
+    "source": "https://arxiv.org/abs/2506.21039"
+  },
+  {
+    "slug": "WALL",
+    "name": "WALL",
+    "title": "Wolfpack Adversarial Attack for Robust Multi-Agent Reinforcement Learning",
+    "authors": "Sunwoo Lee · Jaebak Hwang · Yonghyeon Jo · Seungyul Han",
+    "venue": "ICML 2025",
+    "category": "Robust cooperation",
+    "summary": "Study coordinated attacks on cooperating agents and learn team policies that can withstand them.",
+    "detail": "The Wolfpack attack targets an initial agent and the teammates that assist it. Wolfpack-Adversarial Learning for MARL (WALL) trains policies against this coordinated disruption to improve robustness across the team.",
+    "paper": "https://arxiv.org/abs/2502.02844",
+    "source": "https://arxiv.org/abs/2502.02844"
+  },
+  {
+    "slug": "FoX",
+    "name": "FoX",
+    "title": "FoX: Formation-aware exploration in multi-agent reinforcement learning",
+    "authors": "Yonghyeon Jo · Sunwoo Lee · Junghyuk Yeom · Seungyul Han",
+    "venue": "AAAI 2024",
+    "category": "Cooperative learning",
+    "summary": "Guide exploration through diverse team formations in partially observable cooperative tasks.",
+    "detail": "FoX organizes exploration around formations to reduce redundant search. Agents learn to recognize their formation from local observations and explore meaningful alternatives, with evaluations in sparse SMAC and Google Research Football tasks.",
+    "paper": "https://arxiv.org/abs/2308.11272",
+    "source": "https://arxiv.org/abs/2308.11272"
+  }
+]

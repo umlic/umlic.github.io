@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FIM: Focusing Influence Mechanism for Multi-Agent Reinforcement Learning. NeurIPS 2026. Focus on under-explored state dimensions and sustain coordinated influence.">
+  <meta name="theme-color" content="#183e68">
+  <meta property="og:title" content="FIM · Focusing Influence Mechanism">
+  <meta property="og:description" content="Focused, persistent cooperation under sparse rewards. NeurIPS 2026 · UNIST MLIC.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://unistmlic.github.io/FIM/">
+  <title>FIM · Focusing Influence Mechanism · NeurIPS 2026</title>
+  <link rel="canonical" href="https://unistmlic.github.io/FIM/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav-shell"><nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#main"><span class="brand-mark" aria-hidden="true">F</span> FIM <span class="year">2026</span></a>
+    <div class="nav-links"><a href="../">MLIC Lab</a><a href="#method">Method</a><a href="#results">Results</a><a href="#resources">Resources</a><a href="#citation">Citation</a></div>
+  </nav></header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="paper-title">
+      <a class="lab-back" href="../">← UNIST MLIC · All research projects</a>
+      <p class="eyebrow"><span class="dot"></span> NeurIPS 2026 <span class="eyebrow-divider">/</span> Cooperative multi-agent learning</p>
+      <h1 id="paper-title">Focusing Influence Mechanism<br class="desktop-break"> for Multi-Agent<br class="desktop-break"> Reinforcement Learning</h1>
+      <p class="authors">Yisak Park <span>·</span> Sunwoo Lee <span>·</span> Seungyul Han</p>
+      <p class="affiliation">Graduate School of Artificial Intelligence, UNIST</p>
+      <div class="hero-actions"><a class="button primary" href="assets/FIM_paper.pdf" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a><a class="button secondary" href="#citation">Cite FIM</a><span class="release-status"><span class="status-dot"></span> Code release in preparation</span></div>
+      <p class="hero-summary">Better cooperation starts with <strong>where agents focus</strong>—and <strong>how long they sustain that focus</strong>.</p>
+    </section>
+
+    <section class="teaser wrap" aria-labelledby="teaser-title">
+      <div class="section-kicker"><span>THE CORE IDEA</span><span>Focus together. Keep influencing.</span></div>
+      <h2 class="sr-only" id="teaser-title">A motivating example in Push-2-Box</h2>
+      <div class="teaser-grid">
+        <figure><div class="teaser-image"><img src="assets/pushbox-task.png" width="400" height="400" alt="Push-2-Box environment with two agents and two boxes"></div><figcaption><span class="panel-id">01</span> The task</figcaption></figure>
+        <figure><div class="teaser-image"><img src="assets/pushbox-qmix.png" width="400" height="400" alt="Vanilla QMIX visitation patterns show scattered influence"></div><figcaption><span class="panel-id">02</span> Vanilla QMIX</figcaption></figure>
+        <figure><div class="teaser-image"><img src="assets/pushbox-afi.png" width="400" height="400" alt="Agent focusing alone increases influence over both boxes"></div><figcaption><span class="panel-id">03</span> Agent focusing only</figcaption></figure>
+        <figure class="ours-panel"><div class="teaser-image"><img src="assets/pushbox-fim.png" width="400" height="400" alt="FIM combines agent and state focusing to concentrate influence on a box"></div><figcaption><span class="panel-id">04</span> <strong>FIM: AFI + SFI</strong></figcaption></figure>
+      </div>
+      <p class="figure-note">Original panels from the paper. Push-2-Box requires agents to coordinate their pushing. FIM combines persistent joint influence with selective attention to under-explored state dimensions.</p>
+    </section>
+
+    <section class="overview wrap section" id="overview" aria-labelledby="overview-title">
+      <div class="section-label">01 / OVERVIEW</div>
+      <div><h2 id="overview-title">Exploration needs coordination.</h2><p class="lead">Sparse rewards tell agents little about how to work together. Even when each agent can change the environment, their influence can remain scattered.</p><p>FIM adds an intrinsic learning signal that directs agents toward under-explored parts of the state space and rewards sustained collective influence. It combines entropy-based state selection with eligibility traces, and can augment different multi-agent learning backbones.</p>
+      <details class="abstract"><summary>Read the abstract <span aria-hidden="true">+</span></summary><p>Cooperative multi-agent reinforcement learning (MARL) under sparse rewards remains fundamentally challenging because agents often fail to concentrate their influence, leading to insufficiently coordinated exploration. To address this, we propose the Focusing Influence Mechanism (FIM), a framework that encourages agents to focus their influence on under-explored parts of the state space through an entropy-based criterion, while leveraging eligibility traces to enable multiple agents to consistently align and sustain their influence on the same parts of the state space when beneficial, thereby promoting coordinated and persistent joint behavior. By emphasizing under-explored regions of the state space, FIM facilitates more efficient and structured exploration even under extremely sparse rewards. Across diverse MARL benchmarks, FIM consistently improves cooperative performance over strong baselines.</p></details></div>
+    </section>
+
+    <section class="method-band" id="method"><div class="wrap section">
+      <div class="section-label">02 / METHOD</div><div class="section-heading"><h2>Two complementary forms of focus.</h2><p>Choose meaningful dimensions. Sustain coordinated influence.</p></div>
+      <div class="method-grid">
+        <article class="method-block"><span class="method-number">SFI</span><h3>Where to focus</h3><p class="method-name">State Focusing Influence</p><p>Estimate the entropy of state transitions and give more weight to dimensions with limited observed variation under the current behavior policy.</p><div class="method-bottom"><span class="mini-label">PRIORITY</span><p>Under-explored state dimensions receive larger weights <i>w</i><sub>d</sub>.</p></div></article>
+        <article class="method-block"><span class="method-number">AFI</span><h3>How to sustain it</h3><p class="method-name">Agent Focusing Influence</p><p>Estimate joint influence through counterfactual reasoning. Accumulate this influence with eligibility traces, encouraging the team to keep affecting shared targets over time.</p><div class="method-bottom"><span class="mini-label">PERSISTENCE</span><p>Repeated collective influence increases the trace <i>e</i><sub>t</sub><sup>d</sup>.</p></div></article>
+      </div>
+      <p class="method-takeaway"><span aria-hidden="true">↳</span> Together, SFI and AFI encourage focused, persistent cooperation under sparse rewards.</p>
+    </div></section>
+
+    <section class="wrap section results" id="results" aria-labelledby="results-title">
+      <div class="section-label">03 / RESULTS</div><div class="section-heading"><h2 id="results-title">Cooperation across challenging environments.</h2><p>Performance curves from the paper, using sparse rewards.</p></div>
+      <div class="tabs" role="tablist" aria-label="Benchmark results"><button id="tab-smac" role="tab" aria-selected="true" aria-controls="panel-smac" data-panel="smac">SMAC &amp; SMACv2</button><button id="tab-grf" role="tab" aria-selected="false" aria-controls="panel-grf" data-panel="grf" tabindex="-1">Google Research Football</button></div>
+      <div class="plot-panel" id="panel-smac" role="tabpanel" aria-labelledby="tab-smac"><a href="assets/smac-results.png" target="_blank" rel="noopener" aria-label="Open full-size SMAC and SMACv2 results"><img src="assets/smac-results.png" width="4200" height="2300" loading="lazy" alt="Learning curves comparing FIM with MARL baselines across five SMAC and three SMACv2 scenarios"></a></div>
+      <div class="plot-panel" id="panel-grf" role="tabpanel" aria-labelledby="tab-grf" hidden><a href="assets/grf-results.png" target="_blank" rel="noopener" aria-label="Open full-size Google Research Football results"><img src="assets/grf-results.png" width="4200" height="2300" loading="lazy" alt="Learning curves comparing FIM with MARL baselines on eight half-field and full-field football scenarios"></a></div>
+      <p class="figure-note">Curves show the mean over 5 random seeds; shaded regions denote standard deviation. Select a figure to open its full-resolution version.</p>
+
+      <div class="analysis-grid"><article><span class="mini-label">SCALABILITY</span><h3>Larger teams, sustained final performance.</h3><p>Increasing allied teams from 8 to 10 agents tests whether focused influence remains useful as coordination and state spaces grow.</p><div class="table-scroll"><table><caption class="sr-only">FIM scalability on SMAC</caption><thead><tr><th scope="col">Agents</th><th scope="col">FIM win rate</th><th scope="col">Steps to converge</th></tr></thead><tbody><tr><th scope="row">8</th><td>0.82 ± 0.24</td><td>≈ 7M</td></tr><tr><th scope="row">9</th><td>0.80 ± 0.25</td><td>≈ 11M</td></tr><tr><th scope="row">10</th><td>0.79 ± 0.27</td><td>≈ 25M</td></tr></tbody></table></div><p class="figure-note">Final performance is preserved in these settings, while larger teams require longer training.</p></article>
+      <article><span class="mini-label">GENERALIZATION</span><h3>Beyond vector states and discrete actions.</h3><p>Additional evaluations use spatial binary states in Overcooked and continuous actions in the Multi-Agent Particle Environment.</p><div class="table-scroll"><table><caption class="sr-only">Baseline and FIM-augmented returns</caption><thead><tr><th scope="col">Environment / backbone</th><th scope="col">Baseline</th><th scope="col" class="ours">+ FIM</th></tr></thead><tbody><tr><th scope="row">Overcooked <span class="cell-note">IPPO · coord-ring</span></th><td>195.7 ± 5.3</td><td class="ours">218.5 ± 4.7</td></tr><tr><th scope="row">MPE <span class="cell-note">MAPPO · continuous</span></th><td>−80.7 ± 19.6</td><td class="ours">−63.4 ± 7.9</td></tr></tbody></table></div><p class="figure-note">Returns are mean ± standard deviation; higher is better. MPE is evaluated at 1M steps. Reward scales differ across environments.</p></article></div>
+    </section>
+
+    <section class="resource-band" id="resources"><div class="wrap resource-inner"><div><div class="section-label">04 / RESOURCES</div><h2>Explore the paper.<br>Code is on the way.</h2><p>The implementation will be added to this project page after release.</p></div><div class="resource-links"><a href="assets/FIM_paper.pdf" target="_blank" rel="noopener"><span><strong>Paper</strong><small>Full manuscript and appendix · PDF</small></span><span aria-hidden="true">↗</span></a><div class="unreleased" aria-label="Implementation code, release in preparation"><span><strong>Implementation</strong><small>Release in preparation</small></span><span class="coming">Coming soon</span></div><a href="../"><span><strong>MLIC Research</strong><small>More projects from our lab</small></span><span aria-hidden="true">↗</span></a></div></div></section>
+
+    <section class="wrap section citation" id="citation" aria-labelledby="citation-title"><div class="section-label">05 / CITATION</div><div class="citation-top"><h2 id="citation-title">Cite this work.</h2><button class="copy-button" id="copy-citation" type="button">Copy BibTeX</button></div><pre><code id="bibtex">@inproceedings{park2026focusing,
+  title={Focusing Influence Mechanism for Multi-Agent Reinforcement Learning},
+  author={Park, Yisak and Lee, Sunwoo and Han, Seungyul},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2026}
+}</code></pre><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="../">UNIST MLIC</a><p>Yisak Park · Sunwoo Lee · Seungyul Han<br>Graduate School of Artificial Intelligence, UNIST</p><a href="mailto:syhan@unist.ac.kr">Contact <span aria-hidden="true">↗</span></a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
