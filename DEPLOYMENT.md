@@ -7,7 +7,7 @@
 
 The site uses static HTML, CSS and JavaScript. No package installation or build step is required. Keep `.nojekyll` at the repository root and commit the site files directly at the root, without an enclosing archive folder.
 
-The homepage links to FIM and eight other publication overview pages. Update the project cards and `data/papers.json` together when adding research, and include new routes in `sitemap.xml`.
+The homepage lists 12 lab publications: FIM and eleven other overview pages. The live directory reads `data/papers.json`, including its categories and search aliases. A static fallback remains in `index.html`. Add new overview routes to `sitemap.xml` when creating them.
 
 The FIM paper includes the full manuscript and appendix. Its hosted PDF is optimized for web delivery, retaining all 39 pages, text, links and page geometry. The project page links to the experimental implementation at https://github.com/yisak9101/FIM.
 

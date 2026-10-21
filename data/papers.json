@@ -9,7 +9,8 @@
     "summary": "Focus on under-explored state dimensions and sustain collective influence to improve coordinated exploration under sparse rewards.",
     "paper": "FIM/assets/FIM_paper.pdf",
     "source": "https://mllab.unist.ac.kr/publications/",
-    "code": "https://github.com/yisak9101/FIM"
+    "code": "https://github.com/yisak9101/FIM",
+    "page": "FIM/"
   },
   {
     "slug": "BGP",
@@ -20,7 +21,8 @@
     "category": "Planning & control",
     "summary": "Research on offline goal-conditioned reinforcement learning and the challenge of reaching long-horizon goals.",
     "paper": "https://mllab.unist.ac.kr/publications/",
-    "source": "https://mllab.unist.ac.kr/publications/"
+    "source": "https://mllab.unist.ac.kr/publications/",
+    "page": "papers/BGP/"
   },
   {
     "slug": "MARBO",
@@ -32,7 +34,12 @@
     "summary": "Ground strategic actions and in-game speech in reliable beliefs about hidden roles and team relationships.",
     "detail": "MARBO uses relational beliefs to guide preference optimization in social deduction games. Feedback depends on both the reliability of those beliefs and the strategic outcomes of the resulting behavior.",
     "paper": "https://arxiv.org/abs/2609.06563",
-    "source": "https://arxiv.org/abs/2609.06563"
+    "source": "https://arxiv.org/abs/2609.06563",
+    "page": "papers/MARBO/",
+    "aliases": [
+      "정모",
+      "Jungmo Kim"
+    ]
   },
   {
     "slug": "IBAL",
@@ -44,7 +51,8 @@
     "summary": "Train teams to maintain cooperation when adversarial perturbations disrupt interactions between agents.",
     "detail": "IBAL constructs observation and action perturbations that interfere with coordination. Adversarial training then teaches policies to remain effective under these interaction-focused disruptions, including evaluations with missing agents.",
     "paper": "https://arxiv.org/abs/2605.18024",
-    "source": "https://arxiv.org/abs/2605.18024"
+    "source": "https://arxiv.org/abs/2605.18024",
+    "page": "papers/IBAL/"
   },
   {
     "slug": "LMAC",
@@ -56,19 +64,31 @@
     "summary": "Use an LLM to design communication protocols that help partially observable agents reconstruct the shared state.",
     "detail": "LMAC refines its communication protocol using a state-awareness criterion. The goal is to improve state reconstruction across agents while reducing differences in what each agent knows.",
     "paper": "https://arxiv.org/abs/2605.18077",
-    "source": "https://arxiv.org/abs/2605.18077"
+    "source": "https://arxiv.org/abs/2605.18077",
+    "page": "papers/LMAC/",
+    "aliases": [
+      "상현",
+      "Sanghyun Lee"
+    ]
   },
   {
-    "slug": "S2Q",
-    "name": "S2Q",
-    "title": "Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent Reinforcement Learning",
-    "authors": "Yonghyeon Jo · Sunwoo Lee · Seungyul Han",
+    "slug": "SISL",
+    "name": "SISL",
+    "title": "Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning",
+    "authors": "Sanghyeon Lee · Sangjun Bae · Yisak Park · Seungyul Han",
     "venue": "ICLR 2026",
-    "category": "Cooperative learning",
-    "summary": "Keep alternative high-value actions available as the best joint strategy changes during training.",
-    "detail": "Successive Sub-value Q-learning learns multiple sub-value functions rather than relying on a single optimal action. A softmax behavior policy uses these alternatives to sustain exploration and adapt to changing value estimates.",
-    "paper": "https://arxiv.org/abs/2602.17062",
-    "source": "https://arxiv.org/abs/2602.17062"
+    "category": "Meta & skill learning",
+    "summary": "Refine reusable skills from noisy demonstrations for reliable adaptation to new, long-horizon tasks.",
+    "detail": "SISL separates high-level task execution from skill improvement. It prioritizes useful trajectories through maximum return relabeling and repeatedly refines the skill library, improving adaptation when demonstrations are noisy or suboptimal.",
+    "paper": "https://arxiv.org/abs/2502.03752",
+    "source": "https://arxiv.org/html/2502.03752v5",
+    "code": "https://github.com/epsilog/SISL",
+    "project": "https://epsilog.github.io/SISL/",
+    "page": "papers/SISL/",
+    "aliases": [
+      "상현",
+      "Sanghyun Lee"
+    ]
   },
   {
     "slug": "SSE",
@@ -80,7 +100,27 @@
     "summary": "Make long-horizon plans more reliable by separating feasible subgoals from unreachable ones.",
     "detail": "SSE combines graph-based hierarchical planning with Frontier Experience Replay. Failure and partial-success transitions help identify unreliable subgoals, while a separate exploration policy and path refinement improve coverage and planning.",
     "paper": "https://arxiv.org/abs/2506.21039",
-    "source": "https://arxiv.org/abs/2506.21039"
+    "source": "https://arxiv.org/abs/2506.21039",
+    "page": "papers/SSE/",
+    "aliases": [
+      "상현",
+      "Sanghyun Lee",
+      "정모",
+      "Jungmo Kim"
+    ]
+  },
+  {
+    "slug": "S2Q",
+    "name": "S2Q",
+    "title": "Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent Reinforcement Learning",
+    "authors": "Yonghyeon Jo · Sunwoo Lee · Seungyul Han",
+    "venue": "ICLR 2026",
+    "category": "Cooperative learning",
+    "summary": "Keep alternative high-value actions available as the best joint strategy changes during training.",
+    "detail": "Successive Sub-value Q-learning learns multiple sub-value functions rather than relying on a single optimal action. A softmax behavior policy uses these alternatives to sustain exploration and adapt to changing value estimates.",
+    "paper": "https://arxiv.org/abs/2602.17062",
+    "source": "https://arxiv.org/abs/2602.17062",
+    "page": "papers/S2Q/"
   },
   {
     "slug": "WALL",
@@ -92,7 +132,47 @@
     "summary": "Study coordinated attacks on cooperating agents and learn team policies that can withstand them.",
     "detail": "The Wolfpack attack targets an initial agent and the teammates that assist it. Wolfpack-Adversarial Learning for MARL (WALL) trains policies against this coordinated disruption to improve robustness across the team.",
     "paper": "https://arxiv.org/abs/2502.02844",
-    "source": "https://arxiv.org/abs/2502.02844"
+    "source": "https://arxiv.org/abs/2502.02844",
+    "page": "papers/WALL/"
+  },
+  {
+    "slug": "TAVT",
+    "name": "TAVT",
+    "title": "Task-Aware Virtual Training: Enhancing Generalization in Meta-Reinforcement Learning for Out-of-Distribution Tasks",
+    "authors": "Jeongmo Kim · Yisak Park · Minung Kim · Seungyul Han",
+    "venue": "ICML 2025",
+    "category": "Meta & skill learning",
+    "summary": "Learn task representations and train on virtual tasks to generalize beyond the training distribution.",
+    "detail": "TAVT learns task representations using a task-distance metric and generates virtual experience that preserves task characteristics. State regularization addresses overestimation in environments with varying states; evaluations cover MuJoCo and MetaWorld tasks outside the training distribution.",
+    "paper": "https://arxiv.org/abs/2502.02834",
+    "source": "https://arxiv.org/html/2502.02834v3",
+    "code": "https://github.com/JM-Kim-94/tavt",
+    "page": "papers/TAVT/",
+    "aliases": [
+      "정모",
+      "Jungmo Kim"
+    ]
+  },
+  {
+    "slug": "EPQ",
+    "name": "EPQ",
+    "title": "Exclusively Penalized Q-learning for Offline Reinforcement Learning",
+    "authors": "Junghyuk Yeom · Yonghyeon Jo · Jeongmo Kim · Sanghyeon Lee · Seungyul Han",
+    "venue": "NeurIPS 2024",
+    "award": "Spotlight",
+    "category": "Offline learning",
+    "summary": "Apply value penalties selectively to reduce estimation bias in offline reinforcement learning.",
+    "detail": "EPQ adapts value penalties to states where a learned policy lacks sufficient support in the offline data. Combined with dataset prioritization, this reduces unnecessary pessimism while addressing distribution shift, with evaluations on D4RL control tasks.",
+    "paper": "https://arxiv.org/abs/2405.14082",
+    "source": "https://arxiv.org/html/2405.14082v2",
+    "code": "https://github.com/hyeon1996/EPQ",
+    "page": "papers/EPQ/",
+    "aliases": [
+      "상현",
+      "Sanghyun Lee",
+      "정모",
+      "Jungmo Kim"
+    ]
   },
   {
     "slug": "FoX",
@@ -104,6 +184,7 @@
     "summary": "Guide exploration through diverse team formations in partially observable cooperative tasks.",
     "detail": "FoX organizes exploration around formations to reduce redundant search. Agents learn to recognize their formation from local observations and explore meaningful alternatives, with evaluations in sparse SMAC and Google Research Football tasks.",
     "paper": "https://arxiv.org/abs/2308.11272",
-    "source": "https://arxiv.org/abs/2308.11272"
+    "source": "https://arxiv.org/abs/2308.11272",
+    "page": "papers/FoX/"
   }
 ]
