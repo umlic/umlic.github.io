@@ -1,1 +1,165 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BGP — Escaping Path Mirages in Offline Goal-Conditioned Reinforcement Learning · UNIST MLIC</title><meta name="description" content="Research on offline goal-conditioned reinforcement learning and the challenge of reaching long-horizon goals."><meta name="theme-color" content="#113d46"><meta property="og:title" content="BGP — Escaping Path Mirages in Offline Goal-Conditioned Reinforcement Learning"><meta property="og:description" content="Research on offline goal-conditioned reinforcement learning and the challenge of reaching long-horizon goals."><meta property="og:type" content="website"><meta property="og:url" content="https://unistmlic.github.io/papers/BGP/"><link rel="canonical" href="https://unistmlic.github.io/papers/BGP/"><link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><nav class="container nav" aria-label="Main navigation"><a class="wordmark" href="../../"><span class="mark" aria-hidden="true">M</span><span>MLIC<span class="wordmark-sub">UNIST</span></span></a><div class="nav-links"><a href="../../#projects">Research</a><a href="../../#about">About</a><a href="https://mllab.unist.ac.kr/" target="_blank" rel="noopener">Lab website <span aria-hidden="true">↗</span></a></div></nav></header><main class="container project-detail" id="main"><a class="breadcrumb" href="../../#projects">← All research projects</a><p class="eyebrow">Planning &amp; control <span class="feature-venue">NeurIPS 2026</span></p><h1>Escaping Path Mirages in Offline Goal-Conditioned Reinforcement Learning</h1><p class="detail-authors">Junhyeon Bae · Jaebak Hwang · Gwanwoo Choi · Minung Kim · Seungyul Han</p><p class="detail-affiliation">UNIST · Machine Learning &amp; Intelligent Control Lab</p><a class="button" href="https://mllab.unist.ac.kr/publications/" target="_blank" rel="noopener">View publication listing ↗</a><section class="detail-summary"><p class="eyebrow">RESEARCH OVERVIEW</p><div><h2>Research on offline goal-conditioned reinforcement learning and the challenge of reaching long-horizon goals.</h2><p>The lab publication list records this work as accepted to NeurIPS 2026. See the official listing for publication details.</p><a class="text-link small" href="https://mllab.unist.ac.kr/publications/">Publication details &amp; source ↗</a></div></section><aside class="related"><div><p class="eyebrow">MORE FROM MLIC</p><h2>Focused exploration. Better cooperation.</h2></div><a class="text-link" href="../../FIM/">Explore FIM ↗</a></aside></main><footer class="container footer"><div><a class="footer-brand" href="../../">UNIST MLIC</a><p>Machine Learning &amp; Intelligent Control Lab.</p></div><div class="footer-links"><a href="https://mllab.unist.ac.kr/publications/">Full publication list ↗</a><a href="https://github.com/unistmlic">GitHub ↗</a><a href="mailto:syhan@unist.ac.kr">Contact ↗</a></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafbf9">
+  <meta name="description" content="Branch-aware Graph Planning (BGP) overcomes path mirages in offline goal-conditioned reinforcement learning through stochastic landmarks, goal-conditioned graph edges, and segmented learning. NeurIPS 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BGP — Escaping Path Mirages in Offline Goal-Conditioned Reinforcement Learning">
+  <meta property="og:description" content="Reliable long-horizon goal reaching by planning around stochastic branching. NeurIPS 2026 · UNIST MLIC.">
+  <meta property="og:url" content="https://unistmlic.github.io/papers/BGP/">
+  <title>BGP | Escaping Path Mirages · NeurIPS 2026</title>
+  <link rel="canonical" href="https://unistmlic.github.io/papers/BGP/">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    :root { --ink:#182a2e; --muted:#64747a; --accent:#176b67; --accent-dark:#0e4b49; --line:#dce5e3; --paper:#fafbf9; --soft:#eff5f2; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:90px; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height:1.7; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    .wrap { width:min(1040px,calc(100% - 52px)); margin:0 auto; }
+    .skip { position:absolute; left:-9999px; top:10px; z-index:30; padding:8px 14px; background:white; }
+    .skip:focus { left:10px; }
+    .nav-shell { position:sticky; top:0; z-index:20; background:rgba(250,251,249,.93); border-bottom:1px solid var(--line); backdrop-filter:blur(14px); }
+    .nav { min-height:70px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .brand { font-size:17px; letter-spacing:-.05em; font-weight:800; color:var(--accent-dark); }
+    .brand span { font-size:11px; font-weight:650; color:var(--muted); letter-spacing:.08em; margin-left:9px; }
+    .nav-links { display:flex; align-items:center; gap:27px; font-size:13px; font-weight:600; color:#536469; }
+    .nav-links a:hover,.text-link:hover { color:var(--accent); }
+    .hero { padding:75px 0 56px; text-align:center; }
+    .back-link { display:inline-block; color:var(--muted); font-size:12px; margin-bottom:29px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:11px; font-weight:800; color:var(--accent); }
+    .eyebrow .sep { color:#b0bfba; margin:0 9px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-size:clamp(34px,5.4vw,60px); line-height:1.13; letter-spacing:-.058em; font-weight:760; max-width:940px; margin:22px auto 23px; }
+    h2 { font-size:clamp(27px,3.8vw,40px); line-height:1.19; letter-spacing:-.044em; font-weight:740; margin:0 0 16px; }
+    h3 { font-size:19px; letter-spacing:-.025em; line-height:1.35; }
+    .authors { font-size:15px; color:#3e5257; margin-bottom:5px; }
+    .authors .dot { padding:0 7px; color:#95a5a3; }
+    .affiliation { font-size:13px; color:var(--muted); margin:0 0 27px; }
+    .buttons { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px; }
+    .button { border:1px solid var(--line); background:var(--white); display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:11px 19px; font-weight:680; font-size:13px; border-radius:8px; transition:transform .2s,background .2s; }
+    .button:hover { transform:translateY(-2px); }
+    .button.primary { background:var(--accent-dark); border-color:var(--accent-dark); color:#fff; }
+    .button.primary:hover { background:#176b67; }
+    .hero-lead { max-width:700px; font-size:clamp(17px,2.2vw,22px); color:#42585c; line-height:1.55; margin:32px auto 0; letter-spacing:-.018em; }
+    .section { padding:80px 0; border-top:1px solid var(--line); }
+    .section-head { margin-bottom:30px; }
+    .section-label { font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); font-weight:800; margin-bottom:15px; }
+    .section-intro { font-size:16px; color:#54666a; max-width:790px; margin:0; line-height:1.8; }
+    .figure-frame { margin:30px 0 0; background:#fff; border:1px solid var(--line); border-radius:13px; overflow:hidden; box-shadow:0 5px 22px rgba(15,53,50,.03); }
+    .figure-frame a { display:block; }
+    .figure-frame img { width:100%; height:auto; display:block; object-fit:contain; padding:25px 20px 12px; }
+    figcaption { color:var(--muted); font-size:12px; padding:0 23px 20px; line-height:1.7; }
+    .micro { text-transform:uppercase; font-size:10px; letter-spacing:.15em; font-weight:800; color:var(--accent); }
+    .concept { display:grid; grid-template-columns:1fr 1fr; gap:35px; margin-top:30px; }
+    .concept > div { background:var(--soft); border-radius:10px; padding:22px 24px; }
+    .concept h3 { margin:8px 0; font-size:17px; }
+    .concept p { font-size:13px; color:#526469; margin:0; }
+    .method-band { background:#eff4f1; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .method-band .section { border:0; }
+    .method-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:13px; margin-top:33px; }
+    .method-card { background:#fff; padding:25px 23px; border-radius:10px; border:1px solid #dfE7e3; min-height:235px; }
+    .method-number { font-size:11px; font-weight:800; color:var(--accent); letter-spacing:.12em; }
+    .method-card h3 { margin:20px 0 10px; }
+    .method-card p { font-size:13px; line-height:1.77; color:#5c6d70; margin:0; }
+    .takeaway { border-left:3px solid var(--accent); padding:4px 0 4px 16px; font-size:14px; color:#41575a; margin-top:27px; }
+    .results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:34px; }
+    .stat { border:1px solid var(--line); background:#fff; border-radius:11px; padding:24px 20px; }
+    .stat strong { display:block; color:var(--accent-dark); font-size:39px; letter-spacing:-.06em; line-height:1.2; }
+    .stat span { display:block; font-size:12px; font-weight:650; margin-top:6px; }
+    .stat small { display:block; font-size:11px; color:var(--muted); margin-top:5px; }
+    .section-subhead { font-size:22px; letter-spacing:-.03em; margin:49px 0 8px; }
+    .table-scroll { overflow-x:auto; margin-top:28px; border:1px solid var(--line); border-radius:10px; }
+    table { width:100%; border-collapse:collapse; font-size:13px; text-align:right; background:#fff; }
+    th,td { padding:13px 16px; border-bottom:1px solid #e8eeeb; white-space:nowrap; }
+    tr:last-child td { border-bottom:0; }
+    th:first-child,td:first-child { text-align:left; }
+    thead { background:#f0f5f2; color:#465b5b; }
+    .highlight { color:var(--accent-dark); font-weight:800; }
+    .note { font-size:12px; color:var(--muted); margin-top:12px; }
+    .resource-band { background:#123d3d; color:white; }
+    .resource-band .section { border:0; }
+    .resource-band .section-label { color:#95ded2; }
+    .resource-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:58px; align-items:start; }
+    .resource-band h2 { color:#fff; }
+    .resource-band p { color:#b9d1cf; max-width:340px; font-size:14px; }
+    .resource-links { display:grid; gap:10px; }
+    .resource-links a { display:flex; justify-content:space-between; align-items:center; gap:15px; border:1px solid rgba(255,255,255,.19); border-radius:9px; padding:16px 19px; background:rgba(255,255,255,.06); }
+    .resource-links a:hover { background:rgba(255,255,255,.12); }
+    .resource-links strong { display:block; font-size:15px; }
+    .resource-links small { color:#a9c9c5; font-size:11px; }
+    .github-banner { margin-top:22px; border-radius:9px; background:#fff; color:var(--accent-dark); border:1px solid white; padding:17px 20px; display:flex; gap:13px; align-items:center; justify-content:space-between; }
+    .github-banner:hover { background:#eef8f4; }
+    .github-banner span { font-size:13px; font-weight:750; }
+    .cite { padding-bottom:80px; }
+    .cite-top { display:flex; justify-content:space-between; gap:15px; align-items:center; }
+    .copy { border:1px solid #cbd8d4; background:#fff; color:var(--accent-dark); border-radius:7px; padding:8px 13px; cursor:pointer; font-size:12px; font-weight:700; }
+    pre { overflow:auto; white-space:pre; font-size:12px; line-height:1.75; background:#f0f5f2; border:1px solid var(--line); padding:21px; border-radius:10px; }
+    .copy-status { font-size:12px; color:var(--accent); min-height:18px; }
+    .footer { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:28px 0; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+    .footer a { color:var(--accent-dark); font-weight:750; }
+    @media(max-width:760px) { .wrap { width:min(100% - 34px,1040px); } .nav { min-height:62px; } .nav-links { gap:12px; font-size:11px; } .nav-links .optional { display:none; } .hero { padding:52px 0 44px; } .section { padding:58px 0; } .concept,.resource-grid { grid-template-columns:1fr; gap:15px; } .method-grid { grid-template-columns:1fr; } .method-card { min-height:0; } .results-grid { gap:7px; } .stat { padding:15px 9px; } .stat strong { font-size:29px; } .stat span { font-size:10px; } .figure-frame img { padding:13px 8px 8px; } figcaption { padding:0 14px 16px; } .resource-grid { gap:20px; } .footer { flex-direction:column; align-items:flex-start; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav-shell"><nav class="wrap nav" aria-label="Main navigation">
+    <a class="brand" href="#main">BGP <span>NEURIPS 2026</span></a>
+    <div class="nav-links"><a href="../../">MLIC Lab</a><a href="#motivation">Motivation</a><a href="#method">Method</a><a href="#results">Results</a><a class="optional" href="#resources">Resources</a></div>
+  </nav></header>
+  <main id="main">
+    <section class="wrap hero">
+      <a class="back-link" href="../../">← UNIST MLIC · All research projects</a>
+      <p class="eyebrow">NeurIPS 2026 <span class="sep">/</span> Offline Goal-Conditioned Reinforcement Learning</p>
+      <h1>Escaping Path Mirages in Offline Goal-Conditioned Reinforcement Learning</h1>
+      <p class="authors">Junhyeon Bae* <span class="dot">·</span> Jaebak Hwang* <span class="dot">·</span> Gwanwoo Choi <span class="dot">·</span> Minung Kim <span class="dot">·</span> Seungyul Han</p>
+      <p class="affiliation">Graduate School of Artificial Intelligence, UNIST <span aria-hidden="true">·</span> * Equal contribution</p>
+      <div class="buttons"><a class="button primary" href="assets/BGP_paper.pdf" target="_blank" rel="noopener">↗ Read Paper</a><a class="button" href="https://github.com/junhyeonbae/BGP" target="_blank" rel="noopener">↗ GitHub Code</a><a class="button" href="#citation">Cite BGP</a></div>
+      <p class="hero-lead">Not every promising path is reliable.<br><strong>BGP plans around stochastic branches</strong> to reach distant goals more consistently.</p>
+    </section>
+    <section class="wrap section" id="motivation">
+      <div class="section-head"><div class="section-label">01 / THE PROBLEM</div><h2>When a successful path is a mirage.</h2><p class="section-intro">In stochastic environments, apparently successful trajectories may depend on rare, lucky outcomes. Offline learners can mistake these paths for reliable routes, repeatedly entering branching regions that frequently lead to failure. We call this failure mode <strong>path mirage</strong>.</p></div>
+      <figure class="figure-frame"><a href="assets/motivation.png" target="_blank" rel="noopener" aria-label="Open full-resolution path mirage motivation figure"><img src="assets/motivation.png" width="1752" height="560" alt="Three-panel motivation: stochastic branching creates both goal-reaching and risky outcomes; previous planning can be misled; BGP selects a more reliable path using stochastic landmarks"></a><figcaption><span class="micro">Figure 1 · Motivation</span><br>(a) Ambiguous downstream outcomes at a branching region. (b) Deceptive successes can mislead planning. (c) BGP identifies stochastic landmarks and selects reliable routes.</figcaption></figure>
+      <div class="concept"><div><span class="micro">THE CHALLENGE</span><h3>Connectivity is not reliability.</h3><p>A transition that appears useful in recorded trajectories can still be risky when the environment has multiple stochastic outcomes.</p></div><div><span class="micro">OUR INSIGHT</span><h3>Model where paths branch.</h3><p>Identify high-variability states, then evaluate possible downstream outcomes before committing to a waypoint.</p></div></div>
+    </section>
+    <div class="method-band" id="method"><section class="wrap section"><div class="section-head"><div class="section-label">02 / OUR APPROACH</div><h2>Branch-aware Graph Planning.</h2><p class="section-intro">BGP builds a goal-conditioned planning graph that treats stochastic branching as a first-class part of long-horizon decision making.</p></div>
+      <div class="method-grid">
+        <article class="method-card"><span class="method-number">01 / LANDMARKS</span><h3>Find the branches.</h3><p>Estimate multi-step predictive uncertainty and concentrate graph landmarks near high-variability, branching regions of offline trajectories.</p></article>
+        <article class="method-card"><span class="method-number">02 / GRAPH PLANNING</span><h3>Choose reliable routes.</h3><p>Construct goal-conditioned edge costs that consider downstream branches. Compose local reachability estimates and plan waypoints with graph search.</p></article>
+        <article class="method-card"><span class="method-number">03 / LEARNING</span><h3>Learn locally.</h3><p>Train the policy and value function on trajectory windows bounded by landmark cluster transitions, reducing long-horizon error accumulation.</p></article>
+      </div><p class="takeaway">The result: reliable waypoint planning without treating all data-supported paths as equally trustworthy.</p>
+    </section></div>
+    <section class="wrap section" id="teleport"><div class="section-head"><div class="section-label">03 / PATH ANALYSIS</div><h2>Seeing the difference in a teleport maze.</h2><p class="section-intro">A teleport can lead to different locations, including unreachable dead zones. A local-value edge cost may favor an apparently short route through it; branch-aware edges instead account for downstream reachability and choose a route appropriate for the goal.</p></div>
+      <figure class="figure-frame"><a href="assets/teleport-planning.png" target="_blank" rel="noopener" aria-label="Open full-resolution teleport planning figure"><img src="assets/teleport-planning.png" width="1747" height="636" loading="lazy" alt="Four teleport-maze path visualizations; prior local edge costs lead to failures while BGP goal-conditioned edges select successful paths"></a><figcaption><span class="micro">Figure 6 · Shortest waypoint paths</span><br>(a–b) Planning with the prior edge cost can enter deceptive teleport routes. (c–d) BGP's goal-conditioned edges account for downstream branches and yield successful waypoint paths. The same landmark set is used for comparison.</figcaption></figure>
+    </section>
+    <section class="wrap section" id="results"><div class="section-head"><div class="section-label">04 / EXPERIMENTS</div><h2>Reliable goal reaching across OGBench.</h2><p class="section-intro">BGP is evaluated on state-based and visual maze benchmarks, including challenging navigation, stitching, exploration, and stochastic teleport settings.</p></div>
+      <div class="results-grid"><div class="stat"><strong>91%</strong><span>Antmaze</span><small>Mean success rate</small></div><div class="stat"><strong>98%</strong><span>Pointmaze</span><small>Mean success rate</small></div><div class="stat"><strong>86%</strong><span>Visual-antmaze</span><small>Mean success rate</small></div></div>
+      <p class="note">Mean success rates reported in Table 1 of the paper; each environment group aggregates its evaluated datasets.</p>
+      <h3 class="section-subhead">Robust even as teleport stochasticity increases.</h3><p class="section-intro">We vary the number of active teleport entrances (blackholes) from 0 to 4. Across navigate and stitch datasets, BGP remains substantially more successful than HIQL as teleport-induced stochasticity increases; segmented learning provides additional stability.</p>
+      <figure class="figure-frame"><a href="assets/teleport-robustness.png" target="_blank" rel="noopener" aria-label="Open full-resolution teleport robustness experiment figure"><img src="assets/teleport-robustness.png" width="1748" height="569" loading="lazy" alt="Teleport environments with two and four blackholes and line charts comparing HIQL, BGP without segmented learning, and full BGP across zero to four teleports"></a><figcaption><span class="micro">Figure 7 · Controlled teleport experiment</span><br>(a–b) Example mazes with two and four active teleports. (c–d) Success rates on navigate and stitch datasets as the number of teleports increases. Shaded regions show 95% confidence intervals across five random seeds.</figcaption></figure>
+      <div class="table-scroll"><table><thead><tr><th>Antmaze teleport dataset</th><th>HIQL</th><th>GAS</th><th>BGP</th></tr></thead><tbody><tr><td>Navigate</td><td>42%</td><td>39%</td><td class="highlight">90%</td></tr><tr><td>Stitch</td><td>36%</td><td>39%</td><td class="highlight">92%</td></tr><tr><td>Explore</td><td>34%</td><td>32%</td><td class="highlight">93%</td></tr></tbody></table></div><p class="note">Selected comparison from Table 1. Success rates (%) averaged across five seeds; see the paper for standard deviations and all baselines.</p>
+    </section>
+    <div class="resource-band" id="resources"><section class="wrap section"><div class="resource-grid"><div><div class="section-label">05 / RESOURCES</div><h2>Explore BGP.</h2><p>Read the full paper, inspect the experiments, and explore the official implementation.</p></div><div><div class="resource-links"><a href="assets/BGP_paper.pdf" target="_blank" rel="noopener"><span><strong>Paper</strong><small>NeurIPS 2026 manuscript and appendix · PDF</small></span><span aria-hidden="true">↗</span></a><a href="https://github.com/junhyeonbae/BGP" target="_blank" rel="noopener"><span><strong>Source code</strong><small>Official BGP GitHub repository</small></span><span aria-hidden="true">↗</span></a><a href="../../"><span><strong>UNIST MLIC</strong><small>More research projects from our lab</small></span><span aria-hidden="true">↗</span></a></div><a class="github-banner" href="https://github.com/junhyeonbae/BGP" target="_blank" rel="noopener" aria-label="View BGP code on GitHub"><span>⌘ &nbsp;View the implementation on GitHub</span><span aria-hidden="true">↗</span></a></div></div></section></div>
+    <section class="wrap section cite" id="citation"><div class="section-label">06 / CITATION</div><div class="cite-top"><h2>Cite this work.</h2><button id="copy-citation" class="copy" type="button">Copy BibTeX</button></div><pre><code id="bibtex">@inproceedings{bae2026escaping,
+  title={Escaping Path Mirages in Offline Goal-Conditioned Reinforcement Learning},
+  author={Bae, Junhyeon and Hwang, Jaebak and Choi, Gwanwoo and Kim, Minung and Han, Seungyul},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2026}
+}</code></pre><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></section>
+  </main>
+  <footer class="wrap footer"><a href="../../">UNIST MLIC</a><span>Graduate School of Artificial Intelligence · UNIST</span><a href="mailto:syhan@unist.ac.kr">Contact ↗</a></footer>
+  <script>
+    document.getElementById('copy-citation').addEventListener('click', async function () {
+      const citation = document.getElementById('bibtex').textContent;
+      const status = document.getElementById('copy-status');
+      try { await navigator.clipboard.writeText(citation); status.textContent = 'BibTeX copied to clipboard.'; }
+      catch (_) { status.textContent = 'Please select and copy the BibTeX above.'; }
+    });
+  </script>
+</body>
+</html>
